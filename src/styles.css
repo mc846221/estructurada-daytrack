@@ -1,0 +1,117 @@
+/* ===== DayTrack Design System (Basado en tu Figma) ===== */
+
+/* Paleta */
+:root {
+  --bg: #0f1115;          /* Background principal (dark) */
+  --surface: #151822;     /* Tarjetas */
+  --surface-2: #1a1f2b;   /* Hover/activa */
+  --line: #212636;        /* Bordes sutiles */
+  --text: #e9ecf1;        /* Texto principal */
+  --muted: #9aa3b2;       /* Texto secundario */
+
+  --brand: #6c63ff;       /* Primario */
+  --brand-2: #7f7aff;     /* Gradiente */
+  --danger: #ef4444;      /* Peligro */
+  --ok: #22c55e;          /* Éxito */
+
+  --radius: 16px;
+  --shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+/* Reset mínimo */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout genérico */
+.container { max-width: 1140px; margin: 0 auto; padding: 24px; }
+.section-title { font-size: 22px; font-weight: 800; margin: 0 0 16px; }
+
+/* Tarjetas y utilidades */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.card:hover { border-color: #2a3140; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.row { display: flex; align-items: center; gap: 12px; }
+.row.end { justify-content: flex-end; }
+
+.title { font-weight: 800; }
+.subtitle { color: var(--muted); margin-bottom: 6px; }
+.big { font-size: 28px; font-weight: 800; }
+.muted { color: var(--muted); }
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; color: var(--text);
+}
+
+/* Formularios */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0d111a;
+  color: var(--text);
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, .25);
+}
+
+/* Botones */
+button, .btn {
+  background: var(--brand);
+  color: white;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .04s ease, filter .2s ease, background .2s ease;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+button:hover, .btn:hover { filter: brightness(1.08); }
+button:active, .btn:active { transform: translateY(1px); }
+
+.btn-ghost { background: transparent; border: 1px solid var(--line); color: var(--text); box-shadow: none; }
+.btn-danger { background: var(--danger); }
+.btn-ok { background: var(--ok); }
+
+/* Empty state */
+.empty {
+  text-align: center;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: var(--muted);
+}
+
+/* Tablas simples */
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.table tr:hover { background: rgba(255,255,255,.03); }
+
+/* Links */
+a { color: var(--brand); }
