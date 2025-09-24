@@ -3,7 +3,6 @@
     "id": "u_1",
     "name": "Andrea Arevalo",
     "email": "andrea@example.com",
-    "avatar": "",
     "level": 3,
     "xp": 1450,
     "streak": 7,
@@ -19,31 +18,23 @@
       "notes": "Lectura técnica",
       "createdAt": "2025-09-01",
       "active": true
-    },
-    {
-      "id": "h_2",
-      "name": "Beber agua",
-      "icon": "💧",
-      "color": "#00BFA6",
-      "schedule": ["daily"],
-      "notes": "",
-      "createdAt": "2025-09-02",
-      "active": true
     }
   ],
   "habitLogs": [
-    { "id": "hl_1", "habitId": "h_1", "date": "2025-09-22", "done": true },
-    { "id": "hl_2", "habitId": "h_2", "date": "2025-09-22", "done": true }
+    { "id": "hl_1", "habitId": "h_1", "date": "2025-09-22", "done": true }
   ],
   "badges": [
     { "id": "b_start", "name": "Primer paso", "desc": "Creaste tu primer hábito", "icon": "🎉" },
     { "id": "b_7days", "name": "7 días seguidos", "desc": "Racha de 7 días", "icon": "🔥" }
   ],
+  "nextBadges": [
+    { "id": "nb_1", "name": "Constancia", "desc": "Completa 50 hábitos en total", "goal": 50, "progress": 41 },
+    { "id": "nb_2", "name": "Maratonista", "desc": "Mantén una racha de 30 días", "goal": 30, "progress": 7 }
+  ],
   "levels": [
     { "level": 1, "xpRequired": 0 },
     { "level": 2, "xpRequired": 300 },
-    { "level": 3, "xpRequired": 1000 },
-    { "level": 4, "xpRequired": 2000 }
+    { "level": 3, "xpRequired": 1000 }
   ],
   "settings": {
     "theme": "light",
