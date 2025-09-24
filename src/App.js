@@ -10,6 +10,9 @@ import Reports from "./pages/Reports";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import HabitDetail from "./pages/HabitDetail";
+
+
 
 export default function App() {
   return (
@@ -17,15 +20,19 @@ export default function App() {
       <Navbar />
       <div style={{ padding: 24 }}>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/habits" element={<Habits />} />
-          <Route path="/streaks" element={<Streaks />} />
-          <Route path="/rewards" element={<Rewards />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+  <Route path="/" element={<Dashboard />} />
+  <Route path="/habits" element={<Habits />} />
+  <Route path="/habits/:id" element={<HabitDetail />} />   {/* ✅ aquí */}
+  <Route path="/streaks" element={<Streaks />} />
+  <Route path="/rewards" element={<Rewards />} />
+  <Route path="/reports" element={<Reports />} />
+  <Route path="/profile" element={<Profile />} />
+  <Route path="/settings" element={<Settings />} />
+  <Route path="*" element={<NotFound />} />
+  <Route path="/streaks" element={<Streaks />} />
+
+</Routes>
+
       </div>
     </BrowserRouter>
   );
