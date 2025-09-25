@@ -9,8 +9,8 @@ export default function Navbar() {
       </div>
 
       <div className="nav-right">
-        <span className="motivation">¡Perfecto! ¡Completaste todo!</span>
-        <button className="btn">+ Nuevo Hábito</button>
+        {/* <span className="motivation">¡Perfecto! ¡Completaste todo!</span> */}
+        {/* <button className="btn">+ Nuevo Hábito</button> */}
       </div>
     </nav>
   );

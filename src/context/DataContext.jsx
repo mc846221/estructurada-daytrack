@@ -36,6 +36,10 @@ export function DataProvider({ children }) {
           notes: partial.notes || "",
           createdAt: new Date().toISOString().slice(0, 10),
           active: true,
+          // 👇 campos necesarios para Dashboard
+          progress: partial.progress || 0,
+          goal: partial.goal || 30,
+          streak: partial.streak || 0,
         });
         return d;
       })

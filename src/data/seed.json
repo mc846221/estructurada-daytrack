@@ -17,19 +17,38 @@
       "schedule": ["mon", "tue", "wed", "thu", "fri"],
       "notes": "Lectura técnica",
       "createdAt": "2025-09-01",
-      "active": true
+      "active": true,
+      "progress": 15,
+      "goal": 30,
+      "streak": 5
+    },
+    {
+      "id": "h_2",
+      "name": "Beber agua",
+      "icon": "💧",
+      "color": "#00BFA6",
+      "schedule": ["daily"],
+      "notes": "8 vasos al día",
+      "createdAt": "2025-09-02",
+      "active": true,
+      "progress": 21,
+      "goal": 30,
+      "streak": 10
     }
   ],
   "habitLogs": [
-    { "id": "hl_1", "habitId": "h_1", "date": "2025-09-22", "done": true }
+    { "id": "hl_1", "habitId": "h_1", "date": "2025-09-22", "done": true },
+    { "id": "hl_2", "habitId": "h_2", "date": "2025-09-22", "done": true }
   ],
   "badges": [
-    { "id": "b_start", "name": "Primer paso", "desc": "Creaste tu primer hábito", "icon": "🎉" },
-    { "id": "b_7days", "name": "7 días seguidos", "desc": "Racha de 7 días", "icon": "🔥" }
+    { "id": "b_start", "name": "Primer paso", "desc": "Creaste tu primer hábito", "icon": "🎉", "earned": true },
+    { "id": "b_7days", "name": "7 días seguidos", "desc": "Racha de 7 días", "icon": "🔥", "earned": true },
+    { "id": "nb_1", "name": "Constancia", "desc": "Completa 50 hábitos en total", "icon": "🏆", "earned": false, "goal": 50, "progress": 41 },
+    { "id": "nb_2", "name": "Maratonista", "desc": "Mantén una racha de 30 días", "icon": "⚡", "earned": false, "goal": 30, "progress": 7 }
   ],
-  "nextBadges": [
-    { "id": "nb_1", "name": "Constancia", "desc": "Completa 50 hábitos en total", "goal": 50, "progress": 41 },
-    { "id": "nb_2", "name": "Maratonista", "desc": "Mantén una racha de 30 días", "goal": 30, "progress": 7 }
+  "streaks": [
+    { "habitId": "h_1", "current": 5, "best": 7 },
+    { "habitId": "h_2", "current": 10, "best": 12 }
   ],
   "levels": [
     { "level": 1, "xpRequired": 0 },
