@@ -1,3 +1,4 @@
+// src/App.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
@@ -10,6 +11,7 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Users from "./pages/Users";   // 👈 importamos la página CRUD de usuarios
 import { useAuth } from "./context/AuthContext";
 
 function Protected({ children }) {
@@ -23,8 +25,13 @@ export default function App() {
     <>
       <Navbar />
       <Routes>
+        {/* Login público */}
         <Route path="/login" element={<Login />} />
 
+        {/* CRUD de usuarios */}
+        <Route path="/users" element={<Users />} />
+
+        {/* Rutas protegidas */}
         <Route
           path="/"
           element={
@@ -89,6 +96,8 @@ export default function App() {
             </Protected>
           }
         />
+
+        {/* Ruta por defecto */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -12,6 +12,8 @@ export function DataProvider({ children }) {
   useEffect(() => {
     (async () => {
       const d = await loadData();
+      // inicializamos users si no existe
+      if (!d.users) d.users = [];
       setData(d);
       setLoading(false);
     })();
@@ -40,6 +42,7 @@ export function DataProvider({ children }) {
           progress: partial.progress || 0,
           goal: partial.goal || 30,
           streak: partial.streak || 0,
+          category: partial.category || "",
         });
         return d;
       })
@@ -81,13 +84,52 @@ export function DataProvider({ children }) {
       })
     );
 
+  // === CRUD de usuarios ===
+  const addUser = (partial) =>
+    persist(
+      patchData((d) => {
+        d.users = d.users || [];
+        d.users.push({
+          id: uid("u_"),
+          fullName: partial.fullName,
+          email: partial.email,
+          username: partial.username,
+          password: partial.password, // ⚠️ demo, no cifrado
+        });
+        return d;
+      })
+    );
+
+  const updateUser = (id, changes) =>
+    persist(
+      patchData((d) => {
+        const u = d.users.find((u) => u.id === id);
+        if (u) Object.assign(u, changes);
+        return d;
+      })
+    );
+
+  const removeUser = (id) =>
+    persist(
+      patchData((d) => {
+        d.users = d.users.filter((u) => u.id !== id);
+        return d;
+      })
+    );
+
   const value = {
     data,
     loading,
+    // hábitos
     addHabit,
     removeHabit,
     updateHabit,
     toggleHabitForDate,
+    // usuarios
+    users: data?.users || [], // 👈 ahora expuesto en el contexto
+    addUser,
+    updateUser,
+    removeUser,
   };
 
   return <DataCtx.Provider value={value}>{children}</DataCtx.Provider>;

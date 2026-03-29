@@ -1,11 +1,8 @@
 // src/pages/Dashboard.jsx
 import React, { useState } from "react";
-import Modal from "react-modal"; 
+import Modal from "react-modal";
 import { useData } from "../context/DataContext";
-import HabitForm from "../components/HabitForm"; 
-
-// Necesario para accesibilidad
-Modal.setAppElement("#root");
+import HabitForm from "../components/HabitForm";
 
 export default function Dashboard() {
   const { data, loading, addHabit } = useData();
